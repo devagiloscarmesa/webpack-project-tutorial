@@ -1,10 +1,12 @@
+import {fetch as fetchPolyfill} from 'whatwg-fetch'
+
 class Comentario{
     
    async obtenerCategorias(){
-        const rest = await fetch('https://eonet.sci.gsfc.nasa.gov/api/v3/categories')
-        const categorias = await rest.json();
+        const res = await window.fetch('https://eonet.sci.gsfc.nasa.gov/api/v3/categories')
+        const categorias = await res.json();
         return categorias;
     }
 }
-
+ 
 export default Comentario;
